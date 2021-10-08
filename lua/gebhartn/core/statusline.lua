@@ -15,6 +15,15 @@ local mode_map = {
     ['c'] = 'command',
 }
 
+-- Lua lmao
+function tablelength(T)
+    local count = 0
+    for _ in pairs(T) do
+        count = count + 1
+    end
+    return count
+end
+
 -- Current mode
 local function cursor_mode()
     local m = vim.api.nvim_get_mode()
@@ -35,7 +44,9 @@ local function lsp()
     local result = string.format('%d %d ', diagnostics.errors, diagnostics.warnings)
     local should_count = diagnostics.errors > 0 or diagnostics.warnings > 0
 
-    return should_count and result or 'LSP '
+    local attached_servers = tablelength(vim.lsp.get_active_clients())
+
+    return should_count and result or ('LS ' .. attached_servers .. ' ')
 end
 
 -- Render the statusline

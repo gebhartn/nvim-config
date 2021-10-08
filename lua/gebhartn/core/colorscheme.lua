@@ -32,8 +32,6 @@ local function set_sign(type, icon)
     vim.fn.sign_define(sign, { text = icon, texthl = texthl })
 end
 
-set_sign('Error', 'E')
-
+set_sign('Error', 'X')
 set_sign('Hint', 'O')
-
 set_sign('Warning', 'W')

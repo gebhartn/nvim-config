@@ -90,6 +90,8 @@ function M.highlight(key, fg, bg)
     end
 end
 
+M.git_dir = os.execute 'git rev-parse --is-inside-work-tree >> /dev/null 2>&1'
+
 function _G.smart_tab()
     return vim.fn.pumvisible() == 1 and M.tt '<C-n>' or M.tt '<Tab>'
 end

@@ -1,7 +1,7 @@
 vim.cmd 'filetype plugin indent on'
 
 -- Completion
-vim.o.completeopt = 'menuone,noselect'
+--vim.o.completeopt = 'menuone,noselect'
 vim.o.shortmess = vim.o.shortmess .. 'c'
 
 -- Search
@@ -27,13 +27,14 @@ vim.o.lazyredraw = true
 vim.o.ruler = true
 vim.o.showmode = false
 vim.o.laststatus = 2
-vim.o.statusline = [[%!luaeval("require'gebhartn.statusline'.render()")]]
+vim.o.statusline = [[%!luaeval("require'gebhartn.core.statusline'.render()")]]
 
 -- Better display
-vim.wo.signcolumn = 'no'
+vim.wo.signcolumn = 'number'
 vim.o.cmdheight = 2
 vim.o.hidden = true
 vim.o.pumheight = 10
+vim.o.splitbelow = true
 
 -- File types
 vim.o.encoding = 'utf8'

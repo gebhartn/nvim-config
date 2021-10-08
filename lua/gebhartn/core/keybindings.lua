@@ -41,13 +41,15 @@ utils.nnoremaps('<leader>j', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
 utils.nnoremaps('<leader>k', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
 
 -- Fuzzyfinding
-utils.nnoremap('<C-p>', [[<cmd>lua require'gebhartn.plugins.config.telescope'.git_files()<CR>]])
-utils.nnoremap('<C-f>', [[<cmd>lua require'gebhartn.plugins.config.telescope'.find_files()<CR>]])
+utils.nnoremap('<C-p>', [[<cmd>lua require'gebhartn.plugins.config.telescope'.find_files()<CR>]])
 utils.nnoremap('<C-g>', [[<cmd>lua require'gebhartn.plugins.config.telescope'.live_grep()<CR>]])
 
 -- Completion
 utils.iexnoremap('<Enter>', 'v:lua.smart_enter()')
 utils.iexnoremap('<Tab>', 'v:lua.smart_tab()')
+
+-- Run it
+utils.nnoremap('=', '<cmd>lua require"gebhartn.core.compiler".compile_and_run()<CR>')
 
 -- Create a new file adjacent to current buffer
 utils.nnoremap('<leader>n', ':e <C-R>=expand("%:p:h") . "/" <CR>')

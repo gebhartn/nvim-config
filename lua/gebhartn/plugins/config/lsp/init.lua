@@ -1,5 +1,4 @@
 local path = (...):gsub('%.init$', '')
-local cmp = require 'cmp_nvim_lsp'
 
 -- Diagnostics configuration
 local diagnostics = vim.lsp.diagnostic.on_publish_diagnostics
@@ -27,7 +26,7 @@ local on_attach = function(client)
 end
 
 -- Completion
-local capabilities = cmp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Linting
 require(path .. '.efm').setup {
@@ -50,5 +49,5 @@ require(path .. '.rust').setup {
 -- Typescript
 require(path .. '.tsserver').setup {
     on_attach = on_attach,
-    capabilities = capabilities,
+    -- capabilities = capabilities,
 }
