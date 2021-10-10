@@ -25,9 +25,9 @@ Language Servers:
 
 Linters/Formatters:
 
-- [StyLua] (https://github.com/JohnnyMorganz/StyLua)
-- [eslint_d] (https://github.com/mantoni/eslint_d.js/)
-- [prettierd] (https://github.com/fsouza/prettierd)
+- [StyLua](https://github.com/JohnnyMorganz/StyLua)
+- [eslint_d](https://github.com/mantoni/eslint_d.js/)
+- [prettierd](https://github.com/fsouza/prettierd)
 - [goimpots](https://pkg.go.dev/golang.org/x/tools/cmd/goimports)
 - [gofmt](https://pkg.go.dev/cmd/gofmt)
 - [rustfmt](https://github.com/rust-lang/rustfmt)
