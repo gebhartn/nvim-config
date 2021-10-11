@@ -33,7 +33,11 @@ Linters/Formatters:
 - [rustfmt](https://github.com/rust-lang/rustfmt)
 - [clang format (clang)](https://clang.llvm.org/)
 
+### Caveats / Limitations
+
+If you're using eslint plugins (react/typescript, airbnb config, etc) you need to have those plugins globally intalled along with your eslint_d binary. Also, stick to `eslint@7.32.0` if you're initializing a new project.
+
 ### Known Bugs
 
-- Oct 10, 2021 - eslint_d can't resolve plugin dependencies even if they're installed globally
+- ~~Oct 10, 2021 - eslint_d can't resolve plugin dependencies even if they're installed globally~~
 - Oct 10, 2021 - Packer bootstrapping isn't super smooth, have to open vim a few times to get it working
