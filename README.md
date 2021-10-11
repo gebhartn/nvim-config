@@ -33,6 +33,7 @@ Linters/Formatters:
 - [gofmt](https://pkg.go.dev/cmd/gofmt)
 - [rustfmt](https://github.com/rust-lang/rustfmt)
 - [clang format (clang)](https://clang.llvm.org/)
+- [shfmt](https://github.com/mvdan/sh)
 
 ### Caveats / Limitations
 
