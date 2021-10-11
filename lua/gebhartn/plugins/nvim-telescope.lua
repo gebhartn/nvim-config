@@ -8,7 +8,7 @@ local M = {}
 M.setup = function()
     ts.setup {
         defaults = {
-            --layout_strategy = 'horizontal',
+            layout_strategy = 'horizontal',
             use_less = false,
             mappings = {
                 i = {
@@ -30,7 +30,7 @@ M.find_files_m = function()
 end
 
 M.live_grep = function()
-    builtin.live_grep {}
+    builtins.live_grep {}
 end
 
 return M
