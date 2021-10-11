@@ -27,7 +27,7 @@ utils.snnoremap('<leader>j', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
 utils.snnoremap('<leader>k', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
 
 -- Fuzzyfinding
-utils.nnoremap('<C-p>', [[<cmd>lua require'gebhartn.plugins.nvim-telescope'.find_files()<CR>]])
+utils.nnoremap('<C-p>', [[<cmd>lua require'gebhartn.plugins.nvim-telescope'.find_files_m()<CR>]])
 utils.nnoremap('<C-g>', [[<cmd>lua require'gebhartn.plugins.nvim-telescope'.live_grep()<CR>]])
 
 -- Completion

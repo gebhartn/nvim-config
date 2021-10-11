@@ -1,15 +1,14 @@
 local ts = require 'telescope'
 local builtins = require 'telescope.builtin'
+local actions = require 'telescope.actions'
 local utils = require 'gebhartn.utils'
 
 local M = {}
 
 M.setup = function()
-    local ts = require 'telescope'
-    local actions = require 'telescope.actions'
     ts.setup {
         defaults = {
-            layout_strategy = 'horizontal',
+            --layout_strategy = 'horizontal',
             use_less = false,
             mappings = {
                 i = {
@@ -22,8 +21,12 @@ M.setup = function()
     }
 end
 
-M.find_files = function()
-    return utils.git_dir == 0 and builtins.git_files { previewer = false } or builtins.find_files {}
+M.find_files_m = function()
+    if utils.get_dir == 0 then
+        builtins.find_files { previewer = false }
+    else
+        builtins.git_files {}
+    end
 end
 
 M.live_grep = function()
