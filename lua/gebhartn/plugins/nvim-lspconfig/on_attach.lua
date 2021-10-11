@@ -1,12 +1,7 @@
-local attach_server_with = require('gebhartn.utils').attach_server_with
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local attach_server_with = require('gebhartn.utils').attach_server_with
 
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-    signs = true,
-    virtual_text = false,
-    update_in_insert = true,
-    underline = true,
-})
+local M = {}
 
 local on_attach = function(client)
     if client.name ~= 'null-ls' then
@@ -33,9 +28,7 @@ local on_attach = function(client)
     end
 end
 
-local attach_server = attach_server_with(on_attach, capabilities)
 
-attach_server 'servers.tsserver'
-attach_server 'servers.go'
-attach_server 'servers.rust'
-attach_server 'servers.null'
+M.attach_server = attach_server_with(on_attach, capabilities)
+
+return M
