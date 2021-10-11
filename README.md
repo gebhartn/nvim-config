@@ -38,7 +38,17 @@ Linters/Formatters:
 
 ### Caveats / Limitations
 
+#### General
+
+Typically the language servers will attach to their relevant filetypes if you're in a git directory, but formatting should work based on the detected filetype. If you're getting weird linting behaviors, run `:set filetype?` and check the associated null-ls builtins.
+
+#### TypeScript:
+
 If you're using eslint plugins (react/typescript, airbnb config, etc) you need to have those plugins globally intalled along with your eslint_d binary. Also, stick to `eslint@7.32.0` if you're initializing a new project.
+
+#### Lua:
+
+The `lua-language-server` executable (as well as `main.lua`) needs to be in your `$PATH` and (probably) only works on Linux.
 
 ### Known Bugs
 
