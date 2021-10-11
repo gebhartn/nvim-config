@@ -23,6 +23,7 @@ Language Servers:
 - [Rust Analyzer](https://github.com/rust-analyzer/rust-analyzer)
 - [typescript-language-server](https://github.com/typescript-language-server/typescript-language-server)
 - [gopls](https://github.com/golang/tools/tree/master/gopls)
+- [sumneko_lua](<https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)>)
 
 Linters/Formatters:
 
