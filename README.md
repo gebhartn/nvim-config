@@ -12,6 +12,7 @@ It's a configuration for neovim
 
 Tools/Languages:
 
+- [Ripgrep](https://github.com/BurntSushi/ripgrep)
 - [Node](https://nodejs.org/en/)
 - [ts-node](https://github.com/TypeStrong/ts-node)
 - [Rust](https://www.rust-lang.org/)
