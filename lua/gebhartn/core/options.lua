@@ -61,6 +61,6 @@ vim.o.fillchars = vim.o.fillchars .. string.format 'vert: ,eob: '
 vim.o.clipboard = vim.o.clipboard .. 'unnamedplus'
 
 -- Misc
-vim.wo.wrap = false
+vim.wo.wrap = true
 vim.o.spell = false
 vim.wo.number = true
