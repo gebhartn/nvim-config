@@ -1,17 +1,16 @@
-local path = (...):gsub('%.init$', '')
 local config = require('gebhartn.utils').config
 
 local fn = vim.fn
-local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system {
-        'git',
-        'clone',
-        '--depth',
-        '1',
-        'https://github.com/wbthomason/packer.nvim',
-        install_path,
-    }
+local execute = vim.api.nvim_command
+
+local install_dir = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+local packer_repo = 'https://github.com/wbthomason/packer.nvim'
+
+local install_cmd = string.format('10split |term git clone --depth=1 %s %s', packer_repo, install_dir)
+if fn.empty(fn.glob(install_dir)) > 0 then
+    vim.api.nvim_echo({ { 'Installing packer.nvim', 'Type' } }, true, {})
+    execute(install_cmd)
+    execute 'packadd packer.nvim'
 end
 
 require('packer').startup(function(use)
@@ -46,15 +45,12 @@ require('packer').startup(function(use)
         },
     }
 
-    if packer_bootstrap then
-        require('packer').sync()
-    end
-
     require('packer').install()
 end)
 
-if not packer_bootstap then
+if package.loaded['packer'] then
     config 'nvim-cmp'
+
     config 'nvim-autopairs'
     config 'nvim-treesitter'
     config 'nvim-lspconfig'
