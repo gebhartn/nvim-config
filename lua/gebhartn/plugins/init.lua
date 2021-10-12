@@ -48,10 +48,8 @@ require('packer').startup(function(use)
     require('packer').install()
 end)
 
-if package.loaded['packer'] then
-    config 'nvim-cmp'
-
-    config 'nvim-autopairs'
-    config 'nvim-treesitter'
-    config 'nvim-lspconfig'
-end
+config 'nvim-cmp'
+config 'nvim-autopairs'
+config 'nvim-lspconfig'
+config 'nvim-treesitter'
+config('nvim-telescope').setup()
