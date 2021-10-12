@@ -8,6 +8,7 @@ local commands = {
     rust = 'cargo run %s',
     cpp = 'gcc %s && ./a.out',
     lua = 'luajit %s',
+    ruby = 'ruby %s',
 }
 
 local terminal_wrapper = function(command, file)
