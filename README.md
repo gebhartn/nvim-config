@@ -1,6 +1,17 @@
-### Neovim configuration
+## Neovim configuration
 
 It's a configuration for neovim
+
+### Quick Start
+
+- Install [nvim-nightly](https://github.com/neovim/neovim/releases)
+- Clone `git clone git@github.com:gebhartn/nvim-config ~/.config/nvim`
+- Open once to bootstrap Packer
+- Open again to install plugins
+- Open AGAIN to install treesitter parsers
+- Have fun
+
+Use `:LspInfo` to see if servers are attached to the buffer, `:checkhealth` to see which executables (if any) are missing. If plugins are wild, `:PackerSync` and `:PackerCompile`.
 
 ### Assumptions
 
@@ -17,6 +28,7 @@ Tools/Languages:
 - [ts-node](https://github.com/TypeStrong/ts-node)
 - [Rust](https://www.rust-lang.org/)
 - [Golang](https://golang.org/)
+- [Ruby](https://www.ruby-lang.org/en/)
 
 Language Servers:
 
@@ -24,6 +36,7 @@ Language Servers:
 - [typescript-language-server](https://github.com/typescript-language-server/typescript-language-server)
 - [gopls](https://github.com/golang/tools/tree/master/gopls)
 - [sumneko_lua](<https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)>)
+  [Solargraph](https://solargraph.org/guides/getting-started)
 
 Linters/Formatters:
 
@@ -35,12 +48,13 @@ Linters/Formatters:
 - [rustfmt](https://github.com/rust-lang/rustfmt)
 - [clang format (clang)](https://clang.llvm.org/)
 - [shfmt](https://github.com/mvdan/sh)
+- [Rufo](https://github.com/ruby-formatter/rufo)
 
 ### Caveats / Limitations
 
-#### General
+#### General:
 
-Typically the language servers will attach to their relevant filetypes if you're in a git directory, but formatting should work based on the detected filetype. If you're getting weird linting behaviors, run `:set filetype?` and check the associated null-ls builtins.
+Typically the language servers will attach to their relevant filetypes if you're in a git directory, but formatting should work based on the detected filetype. If you're getting weird linting behaviors, run `:set filetype?` and check the associated null-ls builtins. Also, the first run is a little bit iffy while you're bootstrapping, but should work.
 
 #### TypeScript:
 
@@ -52,5 +66,4 @@ The `lua-language-server` executable (as well as `main.lua`) needs to be in your
 
 ### Known Bugs
 
-- ~~Oct 10, 2021 - eslint_d can't resolve plugin dependencies even if they're installed globally~~
-- Oct 10, 2021 - Packer bootstrapping isn't super smooth, have to open vim a few times to get it working
+:)
