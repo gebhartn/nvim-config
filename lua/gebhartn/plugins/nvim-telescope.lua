@@ -22,10 +22,10 @@ M.setup = function()
 end
 
 M.find_files_m = function()
-    if utils.get_dir == 0 then
-        builtins.find_files { previewer = false }
-    else
+    if utils.is_git_dir == 0 then
         builtins.git_files {}
+    else
+        builtins.find_files { previewer = false }
     end
 end
 
