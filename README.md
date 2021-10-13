@@ -16,8 +16,8 @@ Use `:LspInfo` to see if servers are attached to the buffer, `:checkhealth` to s
 ### Assumptions
 
 - Neovim nightly
-- Install your own server binaries
-- Install your own linting binaries
+- Install your own servers
+- Install your own linters
 
 ### Requirements
 
@@ -37,6 +37,7 @@ Language Servers:
 - [gopls](https://github.com/golang/tools/tree/master/gopls)
 - [sumneko_lua](<https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)>)
   [Solargraph](https://solargraph.org/guides/getting-started)
+  [bashls](https://github.com/bash-lsp/bash-language-server)
 
 Linters/Formatters:
 
@@ -58,11 +59,25 @@ Typically the language servers will attach to their relevant filetypes if you're
 
 #### TypeScript:
 
-If you're using eslint plugins (react/typescript, airbnb config, etc) you need to have those plugins globally intalled along with your eslint_d binary. Also, stick to `eslint@7.32.0` if you're initializing a new project.
+If you're using eslint plugins (react/typescript, airbnb config, etc) you need to have those plugins globally intalled along with your eslint_d executable. Also, stick to `eslint@7.32.0` if you're initializing a new project.
 
 #### Lua:
 
-The `lua-language-server` executable (as well as `main.lua`) needs to be in your `$PATH` and (probably) only works on Linux.
+The directory containing the `lua-language-server` executable (as well as `main.lua`) needs to be in your `$PATH` and (probably) only works on Linux.
+
+As an example, here is my `$PATH` with this config:
+
+```bash
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+
+export PATH=~/.bin:~/.yarn/bin:~/.local/bin:~/.cargo/bin:~/.go/bin:/usr/local/go/bin:~/packages/lua-language-server/bin/Linux:$GEM_HOME/bin:$PATH
+```
+
+Where my `lua-language-server` and `main.lua` files are in `~packages/lua-langauge-server/bin/Linux/`
+
+#### Ruby:
+
+I haven't used Ruby a ton so I am not familiar enough with the ecosystem to make better decisions about tooling. I think [Sorbet](https://sorbet.org/) would be a good addition, and should probably use [Rubocop](https://github.com/rubocop/rubocop) intead of Rufo. I also don't know of a good way to handle `.erb` files yet.
 
 ### Known Bugs
 
