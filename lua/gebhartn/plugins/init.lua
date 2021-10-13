@@ -44,6 +44,7 @@ require('packer').startup(function(use)
             'neovim/nvim-lspconfig',
         },
     }
+    use 'numToStr/Comment.nvim'
 
     require('packer').install()
 end)
@@ -52,4 +53,5 @@ config 'nvim-cmp'
 config 'nvim-autopairs'
 config 'nvim-lspconfig'
 config 'nvim-treesitter'
-config('nvim-telescope').setup()
+config 'nvim-telescope'
+config 'comment'
