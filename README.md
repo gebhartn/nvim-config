@@ -36,8 +36,8 @@ Language Servers:
 - [typescript-language-server](https://github.com/typescript-language-server/typescript-language-server)
 - [gopls](https://github.com/golang/tools/tree/master/gopls)
 - [sumneko_lua](<https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)>)
-  [Solargraph](https://solargraph.org/guides/getting-started)
-  [bashls](https://github.com/bash-lsp/bash-language-server)
+- [Solargraph](https://solargraph.org/guides/getting-started)
+- [bashls](https://github.com/bash-lsp/bash-language-server)
 
 Linters/Formatters:
 
